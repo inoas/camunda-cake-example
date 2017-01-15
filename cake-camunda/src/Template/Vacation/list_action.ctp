@@ -1,14 +1,16 @@
-<h1>Urlaubsanträge</h1>
+<h1>Offene Urlaubsanträge</h1>
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
-        <th colspan="3">TASK-ID</th>
+        <th colspan="4">Mitarbeiter</th>
     </tr>
     </thead>
     <tbody>
     <?php foreach ($tasks as $task) { ?>
     <tr>
-        <td class="col-xs-8"><?php echo $task->getId(); ?></td>
+        <td class="col-xs-8">
+            <span data-toggle="tooltip" data-placement="top" title="TASK-ID: <?php echo $task['id']; ?>"><?php echo $task['employee']; ?></span>
+        </td>
         <td class="col-xs-2">
             <a class="btn btn-success btn-block btn-xs" href="#">
                 <span class="glyphicon glyphicon-ok"></span> GENEHMIGEN
