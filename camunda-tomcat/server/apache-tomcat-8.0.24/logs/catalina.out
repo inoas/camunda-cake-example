@@ -2242,3 +2242,11 @@ Deployment does not provide any case definitions.
 15-Jan-2017 13:47:19.502 WARNING [http-nio-8080-exec-64] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
 15-Jan-2017 13:47:21.879 WARNING [http-nio-8080-exec-70] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
 15-Jan-2017 13:47:22.917 WARNING [http-nio-8080-exec-68] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:44.326 WARNING [http-nio-8080-exec-65] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:44.457 WARNING [http-nio-8080-exec-61] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:46.174 WARNING [http-nio-8080-exec-62] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:51.991 WARNING [http-nio-8080-exec-67] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:51.991 WARNING [http-nio-8080-exec-69] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:52.881 WARNING [http-nio-8080-exec-70] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:56.970 WARNING [http-nio-8080-exec-68] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
+15-Jan-2017 14:02:56.970 WARNING [http-nio-8080-exec-62] org.jboss.resteasy.logging.impl.Slf4jLogger.warn Ignoring unsupported locale: und
