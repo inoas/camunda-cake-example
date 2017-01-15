@@ -1,4 +1,3 @@
 .idea/
 vacation-request/target/
 *.iml
-camunda-tomcat/process-engine.h2.db
