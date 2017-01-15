@@ -45,7 +45,7 @@ Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function ($routes) {
     $routes->resources('Vacation');
-    $routes->connect('/', ['controller' => 'Vacation', 'action' => 'list']);
+    $routes->connect('/', ['controller' => 'Vacation', 'action' => 'listAction']);
 });
 
 /**

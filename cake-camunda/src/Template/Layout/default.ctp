@@ -20,30 +20,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Urlaubsanträge</h1>
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th colspan="3">Mitarbeiter</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-xs-8">John</td>
-                    <td class="col-xs-2">
-                        <a class="btn btn-success btn-block btn-xs" href="#">
-                            <span class="glyphicon glyphicon-ok"></span> GENEHMIGEN
-                        </a>
-                    </td>
-                    <td class="col-xs-2">
-                        <a class="btn btn-danger btn-block btn-xs" href="#">
-                            <span class="glyphicon glyphicon-remove"></span> ABLEHNEN
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+        <?= $this->fetch('content') ?>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

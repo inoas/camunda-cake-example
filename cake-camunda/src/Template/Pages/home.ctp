@@ -40,7 +40,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->css('cake.css') ?>
 </head>
 <body class="home">
-<?php echo WWW_ROOT; ?>
     <header>
         <div class="header-image">
             <?= $this->Html->image('http://cakephp.org/img/logo-cake.png') ?>

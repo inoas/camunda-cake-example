@@ -9,8 +9,8 @@
       </bpmn:extensionElements>
       <bpmn:outgoing>SequenceFlow_1ak7gn0</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_1ak7gn0" sourceRef="vacation-request-received" targetRef="approva-required" />
-    <bpmn:userTask id="approva-required" name="Approve Vacation" camunda:assignee="demo">
+    <bpmn:sequenceFlow id="SequenceFlow_1ak7gn0" sourceRef="vacation-request-received" targetRef="approval-required" />
+    <bpmn:userTask id="approval-required" name="Approve Vacation" camunda:assignee="demo">
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="approved" label="Approved" type="boolean" defaultValue="false" />
@@ -37,7 +37,7 @@
       <bpmn:outgoing>not-approved</bpmn:outgoing>
       <bpmn:outgoing>approved</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="SequenceFlow_1ok1px7" sourceRef="approva-required" targetRef="ExclusiveGateway_1mftr54" />
+    <bpmn:sequenceFlow id="SequenceFlow_1ok1px7" sourceRef="approval-required" targetRef="ExclusiveGateway_1mftr54" />
     <bpmn:sequenceFlow id="SequenceFlow_1yezo8h" sourceRef="yes-task" targetRef="EndEvent_022rpno" />
     <bpmn:userTask id="yes-task" name="Yes Task" camunda:assignee="demo">
       <bpmn:incoming>approved</bpmn:incoming>
@@ -64,7 +64,7 @@
           <dc:Bounds x="362" y="199" width="0" height="0" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_002h0uu_di" bpmnElement="approva-required">
+      <bpmndi:BPMNShape id="UserTask_002h0uu_di" bpmnElement="approval-required">
         <dc:Bounds x="410" y="174" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_022rpno_di" bpmnElement="EndEvent_022rpno">
