@@ -46,6 +46,8 @@ Router::defaultRouteClass(DashedRoute::class);
 Router::scope('/', function ($routes) {
     $routes->resources('Vacation');
     $routes->connect('/', ['controller' => 'Vacation', 'action' => 'listAction']);
+    $routes->connect('/approve/:id', ['controller' => 'Vacation', 'action' => 'approveAction']);
+    $routes->connect('/deny/:id', ['controller' => 'Vacation', 'action' => 'denyAction']);
 });
 
 /**
