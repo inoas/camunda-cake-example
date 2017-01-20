@@ -48,6 +48,7 @@ Router::scope('/', function ($routes) {
     $routes->connect('/', ['controller' => 'Vacation', 'action' => 'listAction']);
     $routes->connect('/approve/:id', ['controller' => 'Vacation', 'action' => 'approveAction']);
     $routes->connect('/deny/:id', ['controller' => 'Vacation', 'action' => 'denyAction']);
+    $routes->connect('/create', ['controller' => 'Vacation', 'action' => 'createAction']);
 });
 
 /**

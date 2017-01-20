@@ -1,4 +1,10 @@
-<h1>Offene Urlaubsanträge</h1>
+<h1>
+    Offene Urlaubsanträge
+    <button class="btn btn-default pull-right" data-toggle="modal" data-target="#create">
+        <span class="glyphicon glyphicon-plus"></span>
+        ANTRAG STELLEN
+    </button>
+</h1>
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
@@ -13,16 +19,46 @@
         </td>
         <td class="col-xs-2">
             <a class="btn btn-success btn-block btn-xs" href="/approve/<?php echo $task['id']; ?>">
-                <span class="glyphicon glyphicon-ok"></span> GENEHMIGEN
+                <span class="glyphicon glyphicon-thumbs-up"></span> GENEHMIGEN
             </a>
         </td>
         <td class="col-xs-2">
             <a class="btn btn-danger btn-block btn-xs" href="/deny/<?php echo $task['id']; ?>">
-                <span class="glyphicon glyphicon-remove"></span> ABLEHNEN
+                <span class="glyphicon glyphicon-thumbs-down"></span> ABLEHNEN
             </a>
         </td>
     </tr>
     <?php } ?>
     </tbody>
 </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="Urlaubsantrag erstellen">
+    <div class="modal-dialog" role="document">
+        <form action="/create" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Urlaubsantrag erstellen</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name des Antragstellers">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span>
+                        SCHLIEßEN
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        URLAUBSANTRAG STELLEN
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
