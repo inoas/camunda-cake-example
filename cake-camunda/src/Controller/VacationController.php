@@ -44,10 +44,10 @@ class VacationController extends Controller
         $tasks = $this->api->task->getTasks($taskRequest);
 
         foreach ($tasks as $task) {
+            $taskList[$task->getId()]['id'] = $task->getId();
+            
             $variableInstanceRequest = new VariableInstanceRequest();
             $variableInstanceRequest->setExecutionIdIn($task->getExecutionId());
-
-            $taskList[$task->getId()]['id'] = $task->getId();
 
             /** @var VariableInstance[] $variableInstances */
             $variableInstances = $this->api->variableInstance->getInstances($variableInstanceRequest);
