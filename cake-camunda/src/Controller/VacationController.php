@@ -29,11 +29,18 @@ class VacationController extends Controller
     }
 
     /**
-     * Show the list of open vacation requests.
+     * Show the application.
+     */
+    public function showAction()
+    {
+        $this->render();
+    }
+
+    /**
+     * List oll open vacation requests.
      */
     public function listAction()
     {
-
         $taskList = [];
 
         $taskRequest = new TaskRequest();
@@ -44,20 +51,22 @@ class VacationController extends Controller
         $tasks = $this->api->task->getTasks($taskRequest);
 
         foreach ($tasks as $task) {
-            $taskList[$task->getId()]['id'] = $task->getId();
-            
             $variableInstanceRequest = new VariableInstanceRequest();
             $variableInstanceRequest->setExecutionIdIn($task->getExecutionId());
 
             /** @var VariableInstance[] $variableInstances */
             $variableInstances = $this->api->variableInstance->getInstances($variableInstanceRequest);
             foreach ($variableInstances as $variable) {
-                $taskList[$task->getId()]['employee'] = $variable->getValue();
+                $taskList[] = [
+                    'task' => $task->getId(),
+                    'employee' => $variable->getValue()
+                ];
             }
         }
 
-        $this->set('tasks', $taskList);
-        $this->render();
+        $this->response->type('application/json');
+        $this->response->body(json_encode($taskList));
+        $this->response->statusCode(200);
     }
 
     /**
@@ -108,7 +117,6 @@ class VacationController extends Controller
     {
         $taskRequest = new TaskRequest();
         $taskRequest->setVariables(['approved' => ['value' => $value]]);
-
         $this->api->task->completeTask($taskId, $taskRequest);
     }
 
