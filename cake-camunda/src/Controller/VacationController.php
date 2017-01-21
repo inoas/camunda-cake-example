@@ -81,8 +81,8 @@ class VacationController extends Controller
             $processDefinitionRequest->setVariables(['employee' => ['value' => $name]]);
             $instance = $this->api->processDefinition->startInstance('approve-vacation-request:3:2efb8b0b-df30-11e6-9cb8-448a5bf0412c', $processDefinitionRequest);
 
-            $this->response->statusCode(200);
             $this->response->body(json_encode(['id' => $instance->getId()]));
+            $this->response->statusCode(200);
         }
         $this->response->type('application/json');
     }
@@ -93,8 +93,6 @@ class VacationController extends Controller
     public function approveAction()
     {
         $this->approveOrDenyRequest($this->request->params['id'], true);
-        $this->response->type('application/json');
-        $this->response->statusCode(204);
     }
 
     /**
@@ -103,8 +101,6 @@ class VacationController extends Controller
     public function denyAction()
     {
         $this->approveOrDenyRequest($this->request->params['id'], false);
-        $this->response->type('application/json');
-        $this->response->statusCode(204);
     }
 
     /**
@@ -118,6 +114,9 @@ class VacationController extends Controller
         $taskRequest = new TaskRequest();
         $taskRequest->setVariables(['approved' => ['value' => $value]]);
         $this->api->task->completeTask($taskId, $taskRequest);
+
+        $this->response->type('application/json');
+        $this->response->statusCode(204);
     }
 
 }
