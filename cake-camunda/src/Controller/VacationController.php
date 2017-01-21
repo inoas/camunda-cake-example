@@ -85,7 +85,7 @@ class VacationController extends Controller
     {
         $this->approveOrDenyRequest($this->request->params['id'], true);
         $this->response->type('application/json');
-        $this->response->statusCode(200);
+        $this->response->statusCode(204);
     }
 
     /**
@@ -95,7 +95,7 @@ class VacationController extends Controller
     {
         $this->approveOrDenyRequest($this->request->params['id'], false);
         $this->response->type('application/json');
-        $this->response->statusCode(200);
+        $this->response->statusCode(204);
     }
 
     /**

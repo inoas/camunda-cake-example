@@ -13,17 +13,17 @@
     </thead>
     <tbody>
     <?php foreach ($tasks as $task) { ?>
-    <tr>
+    <tr data-row-id="<?php echo $task['id']; ?>">
         <td class="col-xs-8">
             <span data-toggle="tooltip" data-placement="top" title="TASK-ID: <?php echo $task['id']; ?>"><?php echo $task['employee']; ?></span>
         </td>
         <td class="col-xs-2">
-            <a class="btn btn-success btn-block btn-xs" href="/approve/<?php echo $task['id']; ?>">
+            <a class="btn btn-success btn-block btn-xs approve-or-deny" href="/approve/<?php echo $task['id']; ?>">
                 <span class="glyphicon glyphicon-thumbs-up"></span> GENEHMIGEN
             </a>
         </td>
         <td class="col-xs-2">
-            <a class="btn btn-danger btn-block btn-xs" href="/deny/<?php echo $task['id']; ?>">
+            <a class="btn btn-danger btn-block btn-xs approve-or-deny" href="/deny/<?php echo $task['id']; ?>">
                 <span class="glyphicon glyphicon-thumbs-down"></span> ABLEHNEN
             </a>
         </td>
