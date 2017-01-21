@@ -79,7 +79,10 @@ class VacationController extends Controller
         } else {
             $processDefinitionRequest = new ProcessDefinitionRequest();
             $processDefinitionRequest->setVariables(['employee' => ['value' => $name]]);
-            $instance = $this->api->processDefinition->startInstance('approve-vacation-request:3:2efb8b0b-df30-11e6-9cb8-448a5bf0412c', $processDefinitionRequest);
+            $instance = $this->api->processDefinition->startInstance(
+                'approve-vacation-request:3:2efb8b0b-df30-11e6-9cb8-448a5bf0412c',
+                $processDefinitionRequest
+            );
 
             $this->response->body(json_encode(['id' => $instance->getId()]));
             $this->response->statusCode(200);
