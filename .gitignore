@@ -1,4 +1,5 @@
 .idea/
-vacation-request/target/
+vacation-request/target/*
+!vacation-request/target/vacation-request-*.war
 *.iml
 camunda-tomcat/
