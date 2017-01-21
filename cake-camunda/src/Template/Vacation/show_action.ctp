@@ -28,7 +28,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name des Antragstellers">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name des Antragstellers" required="required">
                     </div>
                 </div>
                 <div class="modal-footer">
